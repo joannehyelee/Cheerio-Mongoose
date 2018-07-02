@@ -37,10 +37,10 @@ app.use(logger("dev"));
 
 // ROUTER
 // ===================================================
-// require("./routes")(app);
-
-module.exports = app;
+require("./routes")(app);
 
 app.listen(PORT, function() {
     console.log("App running on port " + PORT + "!");
 });
+
+module.exports = app;
