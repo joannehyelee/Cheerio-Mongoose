@@ -36,18 +36,21 @@
                 </div>
         </div> --}}
         <div class="card">
-            <h5 class="card-header">Articles</h5>
+            <h5 class="card-header">Saved Articles</h5>
             <div class="card-body" id="top-articles">
                 {{#each articles }}
+                {{#if saved}}
                 <div>
                     {{!-- <h4>{{ title }}</h4> --}}
-                    <p data-id="{{ _id }}">{{ title }}</p>
+                    <p>{{ title }}</p>
                     <p>{{ saved }}</p>
                     <p>
                         <a href="{{ link }}" target="_blank">{{ link }}</a>
                     </p>
-                    <button class="btn btn-sm btn-primary my-2 my-sm-0 saveArticleBtn">Save Article</button>
+                    <button class="btn btn-sm btn-primary my-2 my-sm-0 saveArticleBtn">Notes</button>
+                    <button class="btn btn-sm btn-primary my-2 my-sm-0 saveArticleBtn">Delete</button>
                 </div>
+                {{/if}}
                 {{/each }}
             </div>
         </div>

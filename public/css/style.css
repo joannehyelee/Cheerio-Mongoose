@@ -25,10 +25,10 @@ body {
     margin-bottom: 20px;
 }
 
-button {
+/* btn-primary {
     background: #81b4c4 !important;
     border: 0 !important;
-}
+} */
 
 #top-articles > div {
     background: #c9d6d6;

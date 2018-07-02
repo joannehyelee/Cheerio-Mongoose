@@ -12,9 +12,9 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 // Mongoose is an ODM (object data modeling) library that provides schema-like structure
 const cheerio = require("cheerio");
-// Cheerio parses our HTML and helps us find elements
+// // Cheerio parses our HTML and helps us find elements
 const request = require("request");
-// Makes HTTP request for HTML page
+// // Makes HTTP request for HTML page
 
 // EXPRESS CONFIGURATION
 // ===================================================
@@ -34,6 +34,36 @@ app.use(bodyParser.json());
 
 // Use morgan logger for logging requests
 app.use(logger("dev"));
+
+// Require models
+const db = require("./models");
+
+// Connect to the Mongo Database
+mongoose.connect("mongodb://localhost/redditDB");
+
+// CHEERIO SCRAPER
+// ===================================================
+// request("https://old.reddit.com/r/gaming/", function(error, response, html) {
+//     // Load the HTML into cheerio & save it to $
+//     const $ = cheerio.load(html);
+
+//     const results = [];
+
+//     // i: iterator
+//     // element: the current element
+//     $("p.title").each(function(i, element) {
+//         const articleTitle = $(element).text();
+//         const articleLink = $(element).children().attr("href");
+
+//         // Save the results in an object & push to results array
+//         results.push({
+//             title: articleTitle,
+//             link: articleLink
+//         });
+//     });
+//     console.log(results);4
+
+// });
 
 // ROUTER
 // ===================================================
