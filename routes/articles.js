@@ -9,4 +9,10 @@ router.get('/saved', articles_controller.index);
 router.put('/', articles_controller.saveArticle);
 // localhost:8000/articles/:id
 
+router.get('/:id', articles_controller.getNote);
+// localhost:8000/articles/:id
+
+router.post('/:id', articles_controller.saveNote);
+// localhost:8000/articles/:id
+
 module.exports = router;
