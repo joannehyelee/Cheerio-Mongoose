@@ -6,42 +6,13 @@
             <h1 class="display-3 text-center">Cheerio Mongoose</h1>
             <span>Reddit Gaming Edition</span>
         </div>
-        {{!-- <div class="card" id="search-parameters">
-                <h5 class="card-header">Search Parameters</h5>
-                <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="search-term">Search Term:</label>
-                            <input type="text" class="form-control" id="search-term">
-                        </div>
-                        <div class="form-group">
-                            <label for="records">Number of Records to Retrieve:</label>
-                            <select class="form-control" id="records">
-                            <option>1</option>
-                            <option>5</option>
-                            <option>10</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="start-year">Start Year (Optional):</label>
-                            <input type="text" class="form-control" id="start-year">
-                        </div>
-                        <div class="form-group">
-                            <label for="end-year">End Year (Optional):</label>
-                            <input type="text" class="form-control" id="end-year">
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="search-button">Search</button>
-                        <button type="submit" class="btn btn-primary" id="clear-button">Clear Results</button>
-                    </form>
-                </div>
-        </div> --}}
+
         <div class="card">
             <h5 class="card-header">Saved Articles</h5>
             <div class="card-body" id="top-articles">
                 {{#each articles }}
                 {{#if saved}}
                 <div class="articles">
-                    {{!-- <h4>{{ title }}</h4> --}}
                     <p data-id="{{ _id }}">{{ title }}</p>
                     <p>{{ saved }}</p>
                     <p>
@@ -55,31 +26,29 @@
             </div>
         </div>
 
-                <!-- Modal -->
-                <div class="modal fade" id="articleNoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle" data-id="{{ _id }}">{{ title }}</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
+        <!-- Modal -->
+        <div class="modal fade" id="articleNoteModal" tabindex="-1" ole="dialog" aria-labelledby="exampleModalCenterTitle" ria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle" data-id="{{ _id }}">{{ title }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="notes-input" class="col-form-label">Notes:</label>
+                                <textarea class="form-control" id="notes-input"></textarea>
                             </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="notes-input" class="col-form-label">Notes:</label>
-                                        <textarea class="form-control" id="notes-input"></textarea>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary saveNoteBtn">Save changes</button>
-                            </div>
-                        </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary saveNoteBtn">Save changes</button>
                     </div>
                 </div>
-
-
+            </div>
+        </div>
     </div>
 </body>

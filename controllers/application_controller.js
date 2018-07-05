@@ -46,5 +46,4 @@ exports.scrapeArticles = function(req, res) {
     });
 
     res.render('index');
-
 };

@@ -13,14 +13,21 @@ exports.index = function(req, res) {
         });
 };
 
+// router.put('save/:id', articles_controller.saveArticle);
+// localhost:8000/articles/save/:id
 exports.saveArticle = function(req, res) {
 
-    db.Article.findOneAndUpdate(
+    db.Article.update(
         {
             _id: req.params.id
         },
         {
-            saved: true
+            $set: {
+                saved: true
+            }
+        },
+        {
+            new: true
         }
     )
     .then(function(dbArticle) {
