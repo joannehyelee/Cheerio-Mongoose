@@ -39,7 +39,15 @@ app.use(logger("dev"));
 const db = require("./models");
 
 // Connect to the Mongo Database
-mongoose.connect("mongodb://localhost/redditDB");
+// mongoose.connect("mongodb://localhost/redditDB");
+
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = "mongodb://heroku_qdwlqqfk:ljtvfk8moeu1qaeqm521cdhgfi@ds127841.mlab.com:27841/heroku_qdwlqqfk" || "mongodb://localhost/redditDB";
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
 
 
 // ROUTER
