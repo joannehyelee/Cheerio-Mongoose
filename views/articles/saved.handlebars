@@ -14,12 +14,11 @@
                 {{#if saved}}
                 <div class="articles">
                     <p data-id="{{ _id }}">{{ title }}</p>
-                    <p>{{ saved }}</p>
                     <p>
                         <a href="{{ link }}" target="_blank">{{ link }}</a>
                     </p>
                     <button class="btn btn-sm btn-primary my-2 my-sm-0 getNoteBtn" data-toggle="modal" data-target="#articleNoteModal">Notes</button>
-                    <button class="btn btn-sm btn-primary my-2 my-sm-0 saveArticleBtn">Delete</button>
+                    <button class="btn btn-sm btn-secondary my-2 my-sm-0 removeArticleBtn">Remove</button>
                 </div>
                 {{/if}}
                 {{/each }}

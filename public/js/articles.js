@@ -11,7 +11,31 @@ $(document).on("click", ".saveArticleBtn", function() {
     })
     .then(function(data) {
         console.log(data);
+        window.location.href = "/";
     }); 
+});
+
+$(document).on("click", ".scrapeBtn", function() {
+    alert("SCRAPE SUCCESS!");
+});
+
+$(document).on("click", ".removeArticleBtn", function() {
+
+    var id = $(this).siblings('p:first').attr('data-id');
+    console.log(id);
+
+    $.ajax({
+        type: "PUT",
+        url: "/articles/remove/" + id,
+        data: {
+            saved: false
+        }
+    })
+    .then(function(data) {
+        console.log(data);
+        window.location.href = "/articles/saved";
+    });
+
 });
 
 $(document).on("click", ".getNoteBtn", function() {

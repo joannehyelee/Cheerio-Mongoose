@@ -42,6 +42,7 @@ exports.scrapeArticles = function(req, res) {
                     console.log(err.message);
                     return res.json(err);
                 });
+                
         });
     });
 

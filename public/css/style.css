@@ -24,22 +24,16 @@ body {
 .card {
     margin-bottom: 20px;
 }
-
-/* btn-primary {
-    background: #81b4c4 !important;
-    border: 0 !important;
-} */
-
 .articles {
     background: #c9d6d6;
     padding: 15px;
     margin-bottom: 10px;
 }
 
-/* h4 {
-    font-weight: 800;
-} */
-
 a {
     text-decoration: underline;
+}
+
+.navbar-brand {
+    text-decoration: none;
 }

@@ -10,16 +10,26 @@
         <div class="card">
             <h5 class="card-header">Articles</h5>
             <div class="card-body" id="top-articles">
+                {{#if articles }}
                 {{#each articles }}
                 <div class="articles">
                     <p data-id="{{ _id }}">{{ title }}</p>
-                    <p>{{ saved }}</p>
                     <p>
                         <a href="{{ link }}" target="_blank">{{ link }}</a>
                     </p>
+                    {{#if saved }}
+                    <button class="btn btn-sm btn-secondary my-2 my-sm-0" disabled>Saved</button>
+                    {{else }}
                     <button class="btn btn-sm btn-primary my-2 my-sm-0 saveArticleBtn">Save Article</button>
+                    {{/if}}
                 </div>
                 {{/each }}
+                {{else }}
+                <div class="text-center">
+                    <a href="/scrape"><button class="btn btn-danger btn-lg my-2 my-sm-0 scrapeBtn">Scrape New Articles</button></a>
+                    <a href="/"><h6 style="padding:10px 0 0 0;">Go to main page</h6></a>
+                </div>
+                {{/if}}
             </div>
         </div>
     </div>

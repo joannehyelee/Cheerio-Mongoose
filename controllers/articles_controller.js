@@ -36,7 +36,31 @@ exports.saveArticle = function(req, res) {
     .catch(function(err){
         res.json(err);
     });
+};
 
+// router.put('/remove/:id', articles_controller.removeArticle);
+// localhost:8000/articles/remove/:id
+exports.removeArticle = function(req, res) {
+
+    db.Article.update(
+        {
+            _id: req.params.id
+        },
+        {
+            $set: {
+                saved: false
+            }
+        },
+        {
+            new: true
+        }
+    )
+    .then(function(dbArticle) {
+        res.json(dbArticle);
+    })
+    .catch(function(err){
+        res.json(err);
+    });
 };
 
 exports.getNote = function(req, res) {
